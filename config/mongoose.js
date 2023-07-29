@@ -1,13 +1,14 @@
-const mongoose  = require('mongoose');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://127.0.0.1/Cpx_Social_Media', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
- mongoose.connect('mongodb://127.0.0.1/csv');
+const db = mongoose.connection;
 
- const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Error connecting to MongoDB'));
+db.once('open', function () {
+  console.log('Connected to Database:: MongoDB');
+});
 
- db.on('error', console.error.bind(console, "Error connecting to MongoDB"));
-
- db.once('open', function(){
-    console.log('Connected to Database:: MongoDB');
- });
-
- module.exports = db;
+module.exports = db;

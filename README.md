@@ -1,6 +1,6 @@
 # Social_Media_Applicatioon
+Complete Manual Authentication
 
-# Manual Authentication DON
-
-# Authentication Using Passport
+complete Authentication Using Passport
 `Setting up passport`
+
