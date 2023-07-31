@@ -1,12 +1,13 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
-const port = 3000;
+const port = 5000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const passportJWT = require ('./config/passport-jwt-strategy');
 const MongoStore = require('connect-mongo');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
