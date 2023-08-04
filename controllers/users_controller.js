@@ -16,6 +16,20 @@ module.exports.profile = async function (req, res) {
   }
 };
 
+// module.exports.profile = async function (req, res) {
+//   try {
+//     // const user = await User.findById(req.params.id);
+
+//     return res.render("profile", {
+//       title: "User Profile",
+//       // profile_user: user,
+//     });
+//   } catch (err) {
+//     req.flash("error", "User not found");
+//     return res.redirect("back");
+//   }
+// };
+
 // module.exports.update = async function(req, res){
 
 //     if(req.user.id == req.params.id){

@@ -8,7 +8,7 @@ const Like = require("../models/like");
 
 module.exports.create = async function (req, res) {
   try {
-    let post = await Post.findById(req.body.post);
+    let post = await Post.findById(req.body.post);   
 
     if (post) {
       let comment = await Comment.create({
@@ -20,7 +20,9 @@ module.exports.create = async function (req, res) {
       post.comments.push(comment);
       post.save();
 
-      comment = await comment.populate(["user", "post"]);
+      // comment = await comment.populate(["user", "post"]);
+      
+       comment = await comment.populate(["user"]);
 
       // comment.post.user = await User.findById(comment.post.user)
       commentsMailer.newComment(comment);
